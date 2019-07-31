@@ -10,7 +10,7 @@ $ oc policy add-role-to-group system:image-puller system:serviceaccounts:testing
 role "system:image-puller" added: "system:serviceaccounts:testing"
 
 ### Populating Development ###
-$ oc new-app https://github.com/pieterdauds/hellopythonapp.git
+$ oc new-app https://github.com/python-cicd/hellopythonapp.git
 $ oc expose svc hellopythonapp
 route "hellopythonapp" exposed
 $ curl $(oc get route hellopythonapp --template '{{.spec.host}}')
@@ -76,7 +76,7 @@ $ oc -n testing policy add-role-to-user edit system:serviceaccount:cicd:jenkins
 role "edit" added: "system:serviceaccount:cicd:jenkins"
 $ oc -n production policy add-role-to-user edit system:serviceaccount:cicd:jenkins
 role "edit" added: "system:serviceaccount:cicd:jenkins"
-$ oc new-app https://github.com/pieterdauds/hellopythonapp.git#pipeline
+$ oc new-app https://github.com/pieterdauds/python-cicd.git#pipeline
 $ oc logs bc/hellopythonapp
 
 ### Starting a new pipeline builds ###
