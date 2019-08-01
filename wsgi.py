@@ -18,7 +18,7 @@ application = Flask(__name__)
 
 @application.route('/')
 def hello_world():
-    return "<center>Hello Python World!\r\n</center>", 200, { 'Content-Type': 'text/plain' }
+    return "<h1>Hello Python World!\r\n</h1>", 200, { 'Content-Type': 'text/plain' }
 
 if __name__ == '__main__':
     application.run(debug = True)
