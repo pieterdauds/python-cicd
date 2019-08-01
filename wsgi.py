@@ -13,11 +13,13 @@
 # You should have received a copy of the GNU General Public License
 # along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 
-from flask import Flask
+from flask import Flask, render_template
+from flask_fontawesome import FontAwesome
 application = Flask(__name__)
+fa = FontAwesome(application)
 
 @application.route('/')
-def hello_world():
+def index():
     return render_template('index.html')
 if __name__ == '__main__':
     application.run(debug = True)
